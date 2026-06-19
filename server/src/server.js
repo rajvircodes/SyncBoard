@@ -1,8 +1,10 @@
 import express from 'express'
 import dotenv from 'dotenv'
+dotenv.config()
 import cors from 'cors'
 import connectDB from './config/db.js'
-dotenv.config()
+import authRoutes from './routes/auth.routes.js'
+
 
 // configuration
 const app = express()
@@ -14,6 +16,8 @@ app.use(express.json())
 
 // health checker routes
 app.get('/health', (req, res) => res.json({ status: 'ok' }))
+
+app.use('/api/auth', authRoutes)
 
 // database connection
 connectDB().then(() => {
