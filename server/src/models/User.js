@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import bcrypt from 'bcryptjs'
+const bcrypt = require('bcryptjs')
+const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema(
   {
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Password is required'],
       minlength: 6,
-      select: false,  
+      select: false,
     },
     avatar: {
       type: String,

@@ -1,15 +1,17 @@
-export const signup = async (req, res)=>{
-    res.json({
-        message:"signup"
-    })
+const signup = async (req, res) => {
+  res.json({
+    message: 'signup',
+  })
 }
-export const login = async (req, res)=>{
-    res.json({
-        message:"Login"
-    })
+const login = async (req, res) => {
+  res.json({
+    message: 'Login',
+  })
 }
-export const logout = async (req, res)=>{
-    res.json({
-        message:"logout"
-    })
+const logout = async (req, res) => {
+  res.json({
+    message: 'logout',
+  })
 }
+
+module.exports = { signup, login, logout }
